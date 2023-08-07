@@ -1,3 +1,5 @@
+//Given a number A. Return 1 if A is prime and return 0 if not. 
+
 public class Solution {
     public int solve(int A) {
         
