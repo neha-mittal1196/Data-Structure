@@ -1,7 +1,8 @@
+//Given an array A and an integer B. A pair(i, j) in the array is a good pair if i != j and (A[i] + A[j] == B). Check if any good pair exist or not.
+//It can have a variation to return indices of the number where sum == target. In that case we need to use hashmap.
+
 public class Solution {
     public int solve(ArrayList<Integer> A, int B) {
-    //Given an array A and an integer B. A pair(i, j) in the array is a good pair if i != j and (A[i] + A[j] == B). Check if any good pair exist or not.
-    //It can have a variation to return indices of the number where sum == target. In that case we need to use hashmap
       
         // Brute force - O(N^2), O(1)
         for(int i=0;i< A.size(); i++){
