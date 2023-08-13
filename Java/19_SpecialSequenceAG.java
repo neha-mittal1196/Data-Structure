@@ -17,6 +17,6 @@ public class Solution {
               cntSub = cntSub + cntA;
         }
 
-        return (int)(cntSub%(Math.pow(10,9)+7)); // It is very important
+        return (int)(cntSub%(Math.pow(10,9)+7)); // It is very important.
     }
 }
