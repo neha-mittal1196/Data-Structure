@@ -18,7 +18,7 @@ public class Solution {
     //Approach3- Carry forward. If the prefix sum repeats or is 0, it means subarray exits with sum 0. TC- O(N^2), SC- O(1)
 
     
-     //Approach 3- Immediately keep on checking whether set contains that element or not. //TC- O(N)
+     //Approach 4- Carry forward with a set. Immediately keep on checking whether set contains that element or not. //TC- O(N), SC- O(N)
     /*long sum = 0;
     Set<Long> set = new HashSet<>();
     set.add(0L); //Before iterating sum is 0.
@@ -37,7 +37,8 @@ public class Solution {
     return 0;*/
  
 
-     //Approach 2- Store elements in prefix sum. Check if the prefix sum is 0 anywhere, it means there exits a subarray with sum 0. If the prefix sum contains the same element then also subarray exits with sum 0.
+     //Approach 5- Store elements in prefix sum with a set. Check if the prefix sum is 0 anywhere, it means there exits a subarray with sum 0. If the prefix sum contains the same element then also subarray exits with sum 0.
+    //TC- O(N), SC- O(N)
     long prefixSum [] = new long[A.length];
     prefixSum[0] = A[0];
 
