@@ -30,7 +30,7 @@ public class Solution {
         int n = A.length;
         long totalSum = 0;
         for(int i=0;i <n; i++){
-           totalSum = totalSum + (long) (i+1)*(n-1-i+1)*A[i];
+           totalSum = totalSum + (long) (i-0+1)*(n-1-i+1)*A[i];
         }
     return totalSum;
 
