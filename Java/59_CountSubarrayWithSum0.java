@@ -13,6 +13,7 @@ public class Solution {
     //pf -> [1, 0, -2, 0]  --> Before iterating add one 0 so that if at any point sum 0 comes, it means we have that subarray.
     // Lets say again 0 comes there will be 2 subarrays not just 1 for the last 0. [1,-1,-2,2] and [-2,2] so we need to add the frequency came until now.
   
+       
     ArrayList<Integer> prefixList = new ArrayList<>();
     int sum = 0;
 
@@ -21,8 +22,10 @@ public class Solution {
       prefixList.add(sum);
     }
 
+
     Map<Long,Integer> hm = new HashMap<>();
     hm.put(0L,1);
+
     int cnt=0;
  
     for(int i=0;i< prefixList.size();i++) {
@@ -30,15 +33,14 @@ public class Solution {
 
         if(hm.containsKey(elem)){
             int freq = hm.get(elem);
-            cnt = cnt + freq; //V.Imp is to add the frequency instead of 1.
+            cnt = cnt + freq;
             hm.put(elem, freq +1);
         }
         else {
-             hm.put(elem,1);
+            hm.put(elem,1);
         }
     }
 
-    return cnt;
-
+    return  cnt%1000000007;
     }
 }
