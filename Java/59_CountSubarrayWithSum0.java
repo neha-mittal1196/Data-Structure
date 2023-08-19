@@ -12,8 +12,9 @@ public class Solution {
      //[1, -1, -2, 2]
     //pf -> [1, 0, -2, 0]  --> Before iterating add one 0 so that if at any point sum 0 comes, it means we have that subarray.
     // Lets say again 0 comes there will be 2 subarrays not just 1 for the last 0. [1,-1,-2,2] and [-2,2] so we need to add the frequency came until now.
-  
-       
+
+    
+    //Approach1- Prefix sum with a hashmap
     ArrayList<Integer> prefixList = new ArrayList<>();
     int sum = 0;
 
@@ -42,5 +43,27 @@ public class Solution {
     }
 
     return  cnt%1000000007;
+    }
+
+
+    //Approach2- Carry forward with a hashmap
+    int n = A.size();
+
+    Map<Integer,Integer> mp = new HashMap<>();
+    mp.put(0,1);
+    int sum = 0;
+    int ans = 0;
+   
+    for(int i=0;i<n;i++)
+    {
+           sum+=A.get(i);
+           if(mp.containsKey(sum))
+           {
+               ans+= mp.get(sum);
+           }
+           mp.put(sum,mp.getOrDefault(sum,0)+1);
+    }
+    return ans;
+
     }
 }
