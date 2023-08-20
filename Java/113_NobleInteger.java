@@ -42,4 +42,23 @@ public class Solution {
          j--;
         }
     }
+
+
+//Approach2 - Store no of elements greater than that element in a map. Check if key and value of map is equal, then add the count.
+      Arrays.sort(A);  //5,2,6 -> 2,5,6  
+      int cntOfNobleIntegers = 0;
+      int n = A.length;
+      Map<Integer, Integer> mp = new HashMap<>();
+      for(int i=0; i< n; i++){
+        mp.put(A[i], n-1-i);  // 2 -> 2, 5 -> 1, 6 -> 0
+     }
+     
+     for (Map.Entry<Integer, Integer> entry : mp.entrySet()) {
+          if(entry.getKey() == entry.getValue())
+           cntOfNobleIntegers++;
+     }
+     if(cntOfNobleIntegers == 0)
+       return -1;
+
+     return cntOfNobleIntegers;
 }
