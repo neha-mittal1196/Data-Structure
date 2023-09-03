@@ -39,5 +39,33 @@ public class Solution {
     }  
 
   return A;
+
+//2nd approach - Use array instead of set.
+    int n = A.length;
+    int m = A[0].length;
+
+    int row[] = new int[n];
+    int col[] = new int[m];
+
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+            if(A[i][j] == 0){
+                row[i] = -1;
+                col[j] = -1;
+            }
+        }
+    }
+
+    for(int i=0;i< n;i++){
+        for(int j=0;j< m;j++){
+            if(row[i] == -1|| col[j] == -1){
+                 A[i][j] = 0;
+            }
+        }
+    }
+    
+    return A;
+
+        
  }
 }
