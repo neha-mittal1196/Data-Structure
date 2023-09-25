@@ -19,7 +19,8 @@ public class Solution {
          //return A;
 
      //Approach3- Optimised - Store each number's count in an array. Iterate the array those number of times - //TC- O(N), SC- O(1)
-
+     //Note:- It will work only if we are told give positive integers. Not even 0 is included.
+        
       //Get max element from the array.
        int max = 0;
        for(int i=0;i < A.length; i++) {
