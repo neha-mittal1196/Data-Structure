@@ -1,0 +1,37 @@
+//Possible non duplicate subsets for an array of integers
+
+public class Solution {
+    ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+
+    public ArrayList<ArrayList<Integer>> subsets(ArrayList<Integer> A) {
+        Collections.sort(A);
+        ArrayList<Integer> subset = new ArrayList<>();
+        int visited[] = new int[A.size()];
+        findSubsets(A, subset, visited );
+        return list;
+    }
+
+    void findSubsets(ArrayList<Integer> A, ArrayList<Integer> subset, int visited[]) {
+        // System.out.println("index is : "+ index);
+        // System.out.println("Subset is : "+ subset);
+        ArrayList<Integer> newSubset = new ArrayList<>();
+        newSubset.addAll(subset);
+        list.add(newSubset);
+        // System.out.println("list is : "+ list);
+       
+
+        if(subset.size() == A.size()) {
+            return;
+        }
+
+        for(int i=0; i< A.size(); i++) {
+            if(visited[i] ==0 && (subset.size() == 0 || A.get(i) > subset.get(subset.size()-1))) {
+                visited[i] = 1;
+                subset.add(A.get(i));
+                findSubsets(A, subset, visited);
+                visited[i] = 0;
+                subset.remove(subset.size()-1);
+            }
+        }
+    }
+}
